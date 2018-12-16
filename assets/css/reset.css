@@ -32,15 +32,24 @@ body {
   }
 
   .card-img-top{
-    display: abosolute;
+
   margin-left: 25%;
   width: 50%;
     opacity: 0.6;
     filter: alpha(opacity=50); 
-    
+  
       
   }
   .card{
-   background-color: rgba(17, 107, 224, 0.185)
+    float: left;
+   background-color: rgba(17, 107, 224, 0.185);
+margin-left: 20px;
+    
+
+  }
+  .cards{
+
+float: left;
+margin-left: 10%;
 
   }
