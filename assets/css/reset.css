@@ -1,0 +1,46 @@
+.jumbotron-fluid{
+
+    border: 2px solid  rgba(36, 143, 107, 0.712);
+    padding: 34px;
+    font-family: 'Shadows Into Light', cursive;
+    color: rgba(43, 168, 127, 0.712);
+    text-shadow: 3px 2px black;
+    text-align: right;
+
+}
+
+#plane{
+    position: absolute;
+    top: 1%;
+    left: 1%;
+    bottom: 1%;
+    right: 0%;
+ 
+
+
+}
+
+
+body {
+
+    /* <!--Background IMAGE--> */
+    background-image: url("../images/background.png");
+   
+    background-attachment: fixed;
+    font-family: 'Shadows Into Light', cursive;
+
+  }
+
+  .card-img-top{
+    display: abosolute;
+  margin-left: 25%;
+  width: 50%;
+    opacity: 0.6;
+    filter: alpha(opacity=50); 
+    
+      
+  }
+  .card{
+   background-color: rgba(17, 107, 224, 0.185)
+
+  }
