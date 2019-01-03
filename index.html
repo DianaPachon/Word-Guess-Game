@@ -42,12 +42,15 @@
    
 </head>
 <body>
-<h1 class="text-center" >Countries!</h1> 
+<h1 class="text-center" > Find the name of a Country!</h1> 
 
 <!--ABOUT COUNTRIES-->
+
+
 <div class="card" style="width: 30rem;">
     <img class="card-img-top" src="assets/images/map.jpg" alt="Card image cap">
     <div class="card-body">
+     
       <p class="card-text"><h4>There are 195 Countries in the WORLD!</h4>
       <li><h4>Taiwan  the United Nations considers it represented by the People's Republic of China</h4></li>
       <li><h4>The Cook Islands and Niue, both states in free association with New Zealand which are members of several UN specialized agencies and have been recognized "full treaty-making capacity", but are neither member states nor non-member observer states.</h4></p>
@@ -57,12 +60,23 @@
 
 <!-- GAME-->
   <div class="cards" style="width: 30rem;">
-    <img class="card-img-top" src=".../100px180/?text=Image cap" alt="Card image cap">
+    
     <div class="card-body">
-      <p class="card-text"><div class="underscores"> _ _ _ _ _ _ _ _ </div>
-        <div class="rightGuesss">right guess</div>
-        <div class="wrongGuess"> Wrong Guess </div>
-        <div id="container">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+       
+      <p class="card-text">
+        <div id="game">
+          image:<img id="pic" src="images/big.png" /> <br>
+         
+          <h2>enter your guess!!!</h2><br/><span id="selectedWord"></span><br/>
+          <h2> _ _ _ _ _ </h2>
+          <h2>Wrong guesses:</h2> <span id="looseCounter"></span><br>
+          <h2>Guess Amount Left: <span id="guessAmount">15</span><br></h2>
+          <h2>Correct guesses: <span id="WinnCounter">0</span><br></h2>
+          <h2></he>Losses: <span id="looseCounter">0</span> <br></h2>
+          
+        
+    
+        </div>
     </div>
   </div>
 
