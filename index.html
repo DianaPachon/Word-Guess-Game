@@ -1,93 +1,48 @@
-<!DOCTYPE html>
-
-<html>
-    <head>
-<html lang="en">
-
-<meta charset="UTF-8">
-<title>Word Guess Name</title>
-
-<!-- BOOTSTRAP-->
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-<link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light" rel="stylesheet">
-
-
-  <!-- Added link to the jQuery Library -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-<!-- CSS -->
-<link rel="stylesheet"href= "assets/css/reset.css">
-
-
-</head>
-
-
-<body>
-
-<!--TITLE-->
+<!DOCTYPE HTML>
+<Html lang="en">
 <head>
+	<meta charset="utf-8">
+	<title>Word Guess Name</title>
+	
+<!--bootstrap-->
 
-      <!-- Jumbotron with Title -->
-            <div class="jumbotron jumbotron-fluid" >
-                <h1 class="display-4"  >Learn More About The World!</h1>
-              <img id="plane" src="assets/images/plane.png" height="130" width="400">
-            </div>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	
+	  <!-- Added link to the jQuery Library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-       
-            </h1>
-            <hr>
-            </div>
+	<!--css-->
+<link rel="stylesheet" href="assets/css/reset.css">
 
-    
-   
-</head>
+	</head>
 <body>
-<h1 class="text-center" > Find the name of a Country!</h1> 
+<div class="jumbotron jumbotron-fluid">
+	<h1 class"display-4">Learn More About The World!</h1>
+	</div>
+<body>
 
-<!--ABOUT COUNTRIES-->
+<h1 class="text-center">Find the name of a Country</h1>
+	
 
-
-<div class="card" style="width: 30rem;">
-    <img class="card-img-top" src="assets/images/map.jpg" alt="Card image cap">
-    <div class="card-body">
-     
       <p class="card-text"><h4>There are 195 Countries in the WORLD!</h4>
       <li><h4>Taiwan  the United Nations considers it represented by the People's Republic of China</h4></li>
       <li><h4>The Cook Islands and Niue, both states in free association with New Zealand which are members of several UN specialized agencies and have been recognized "full treaty-making capacity", but are neither member states nor non-member observer states.</h4></p>
-    </div>
-  </div>
-
-
-<!-- GAME-->
-  <div class="cards" style="width: 30rem;">
-    
-    <div class="card-body">
-       
-      <p class="card-text">
-        <div id="game">
-          image:<img id="pic" src="images/big.png" /> <br>
-         
-          <h2>enter your guess!!!</h2><br/><span id="selectedWord"></span><br/>
-          <h2> _ _ _ _ _ </h2>
-          <h2>Wrong guesses:</h2> <span id="looseCounter"></span><br>
-          <h2>Guess Amount Left: <span id="guessAmount">15</span><br></h2>
-          <h2>Correct guesses: <span id="WinnCounter">0</span><br></h2>
-          <h2></he>Losses: <span id="looseCounter">0</span> <br></h2>
-          
-        
-    
-        </div>
-    </div>
-  </div>
-
-
-<!-- GAME -->
-
-    <!-- Random word Divs appended here -->
-</div>
-
+	
+	<h2>enter your guess</h2>
+		<br>
+	<h2 id="blankSpaces"> _ _ _ _ _ _  </h2>
+		<br>
+	<h2>Wrong Guesses: <span id="wrongGuesses"></span></h2>
+	<h2>Guess Amount Left: <span id="numberGuesses">15</span></h2>
+		<br>
+	<h2>Correct Guesses: <span id="winCounter">0</span></h2>
+		<br>
+	<h2>Losses: <span id="loooseCounter">0</span></h2>	
+	<br>
+	
 <script src="assets/javascript/game.js"></script>
+	
+	
+	</body>	
 
-
-</body>
-</html>
+</Html>

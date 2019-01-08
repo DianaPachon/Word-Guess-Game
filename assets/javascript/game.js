@@ -1,88 +1,121 @@
 
-$(document).ready(function() {
-
-	// variables
-
-    var category = ['Colombia', 'Serbia', 'Germany', 'Argentina'];
-    var selectedWord = " ";
-    var lettersInWord = [];
-    var numberOfBlank = 0;
-    var blankAndSuccess = []; // will show the word and the  empty blanks ex: C _ _
-    var WinnCounter = 0;
-    var looseCounter = 0;
-    var guessAmount = 15;
-
-    // three functions .. 
-    function startGame (){
-        selectedWord = category[Math.floor(Math.random() * category.length)];
-        console.log(selectedWord);
-        
+$(document).ready(function(){
+    // Global Variables
+                      var category=['colombia','serbia', 'germany', 'argentina'];
 
     
-    }
-    // Select a random element
+                      var selectedWord =" ";
+                      var lettersInWord= [];
+                      var numberOfBlank = 0; 
+                      var blankAndSuccess =[];
+                      var wrongLetter =[];
+    // Game Count
+                      var winCount =0;
+                      var looseCount =0;
+                      var guessAmount= 15;
+    // Functions
+                      function startGame(){
+     selectedWord = category[Math.floor(Math.random()*category.length)];
+     lettersInWord = selectedWord.split("");
+     numberOfBlank = lettersInWord.length;
 
 
+    //Reset 
+                          guessAmount =15; 
+                          wrongLetter =[];
+                          blankAndSuccess =[];
+                           
+    //populate blank and success with the rignt number of blanks
+                          for (var i=0; i<numberOfBlank; i++){
+                              blankAndSuccess.push("_");
+                       
+                          }
 
+
+      // Change HTML to reflect round conditions
     
+        document.getElementById("blankSpaces").innerHTML = blankAndSuccess.join(" ");
+        document.getElementById("numberGuesses").innerHTML = guessAmount;
+        document.getElementById ("winCounter").innerHTML = winCount;
 
 
-	// Draw squares for secret word & hide letters
-	for(var i = 0; i < randomWord.length; i++) {3
-        $('#container').append('<div class="letter ' + i + '"></div>');
-        $('#container').find(":nth-child(" + (i + 1) + ")").text(randomWordArray[i]);
-        $(".letter").css("color", "#4ABDAC");
+
+ 
+
+ 
+      //Testing /Debugging
+     console.log(selectedWord);
+     console.log(lettersInWord);
+     console.log(numberOfBlank);
+     console.log(blankAndSuccess);
+} 
+ 
+function checkLetters(letter){
+
+ 
+    //check if the letter exist anywhere in the word
+      var isLetterInWord = false;
+      for (var i=0; i<numberOfBlank; i++) {
+          if(selectedWord)[i] == (letter)  
+             isLetterInWord = true;    
+    
+      }
+
+      //check where in the word the letter exists and populate out blankAndSuccess
+      if(isLetterInWord){
+      for (var i=0; i<numberOfBlank; i++) {
+          if(selectedWord[i] == letter)
+          blankAndSuccess[i] = letter;
+      } 
     }
 
-	// Button click function
-    var wrongGuesses = 0;
-    $("button").on("click", function(){
-        $(this).addClass("used");
-        $(this).prop("disabled", "true");
-        var matchFound = false;
+    else{
+        wrongLetter.push(letter);
+        guessAmount --
+    } 
+ 
+    console.log(blankAndSuccess);
+  }
 
-        // Check if clicked letter is in secret word
-        var userGuess = $(this).text();
-        for (var i = 0; i < randomWord.length; i++) {
-            if (userGuess === randomWord.charAt(i)) {
-                $('#container').find(":nth-child(" + (i + 1) + ")").css("color", "#EFEFEF").addClass("winner");
-                matchFound = true;
-            }
-        }
 
-        //Check for winner
-        var goodGuesses = [];
-        $(".letter").each(function( index ) {
-            if ( $(this).hasClass("winner") ) {
-                goodGuesses.push(index);
-                if (goodGuesses.length === randomWordArray.length) {
-                    $("#container").hide();
-                    $("button").prop("disabled", "true");
-                    $(".category").text("Great job you guessed the secret word!");
-                    $(".category").append("<br><button enabled class='play-again'>Play again?</button>");
-                }
-            }
-        });
+function roundToComplete(){
+    console.log("Win Count: " + winCount + " | Loss Count: " +  looseCount + "| Guesses Left " + guessAmount);
+     
+    //If user won
+if(lettersInWord.toString()== blankAndSuccess.toString){
+    winCount ++;
+    alert("You Won!");
+}
 
-        // If no match, increase count and add appropriate image
-        if (matchFound === false) {
-            wrongGuesses += 1;
-            $("#hangman").attr("src", "img/" + wrongGuesses + ".png");
-        }
+//Update the win couner in the HTML
+document.getElementById ("winCounter").innerHTML = winCount;
 
-        // If wrong guesses gets to 7 exit the game
-        if (wrongGuesses === 7) {
-            $("#container").hide();
-            $("button").prop("disabled", "true");
-            $(".category").text("Sorry you lost! The secret word was " + randomWord);
-            $(".category").append("<br><button enabled class='play-again'>Play again?</button>");
-        }
+    //If user lost 
 
-        // Play again button
-        $(".play-again").on("click", function(){
-            location.reload();
-        });
+    else if(guessAmount == 0) {
+        lossCount ++;
+        alert("you Lost..");
+    
+    }
+}
 
-    }); // End button click
+startGame();
 
-}); // End document.ready
+
+      // Initatiates the code the disrt time.
+    
+    document.onkeyup = function(event){
+        var letterGuessed = String.fromCharCode(event.keyCode).toLowerCase();
+        checkLetters(letterGuessed);
+        roundToComplete();
+
+    //Testing /Debugging
+
+        console.log(letterGuessed);
+
+     
+    }
+
+
+
+                      }); 
